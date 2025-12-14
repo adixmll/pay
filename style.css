@@ -9,7 +9,7 @@ touch-action:manipulation;
 
 /* ===== BACKGROUND NEON PINK ===== */
 body{
-position:relative; /* FIX: biar emoji absolute aman */
+position:relative;
 background:
 radial-gradient(circle at 20% 20%, rgba(255,45,214,0.35), transparent 40%),
 radial-gradient(circle at 80% 30%, rgba(255,120,220,0.35), transparent 45%),
@@ -19,14 +19,14 @@ background-size:200% 200%;
 animation:bgMove 18s ease-in-out infinite;
 color:white;
 font-family:Arial, sans-serif;
-min-height:100vh; /* FIX: lebih aman dari 100vh */
+min-height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
 overflow:hidden;
 }
 
-/* ANIMASI BACKGROUND */
+/* BACKGROUND MOVE */
 @keyframes bgMove{
 0%{background-position:0% 50%}
 50%{background-position:100% 50%}
@@ -38,12 +38,12 @@ overflow:hidden;
 position:absolute;
 left:var(--x);
 font-size:var(--size);
-opacity:0.8;
+opacity:0.85;
 animation:floatUp var(--speed) linear infinite;
 animation-delay:var(--delay);
 filter:drop-shadow(0 0 10px rgba(255,80,200,0.9));
 pointer-events:none;
-z-index:1; /* FIX: di bawah box */
+z-index:1;
 }
 
 @keyframes floatUp{
@@ -55,16 +55,57 @@ transform:translateY(-30vh) rotate(360deg);
 }
 }
 
-/* ==== NUMBER BOX ==== */
+/* ===== BOX UTAMA ===== */
+.box{
+position:relative;
+z-index:5;
+width:92%;
+max-width:420px;
+background:rgba(10,10,20,0.92);
+padding:26px;
+border-radius:22px;
+text-align:center;
+box-shadow:0 0 30px #ff2bd6;
+}
+
+.box h2{
+color:#ff5fd2;
+margin-bottom:18px;
+text-shadow:0 0 10px #ff2bd6;
+}
+
+/* ===== BUTTON (FIX SUSAH DIPENCET) ===== */
+.btn{
+width:100%;
+min-height:60px;          /* AREA SENTUH BESAR */
+padding:18px 20px;
+margin:14px 0;
+border:none;
+border-radius:18px;
+font-size:18px;
+font-weight:bold;
+letter-spacing:0.5px;
+color:white;
+background:linear-gradient(135deg,#ff2bd6,#8f00ff);
+box-shadow:0 0 18px rgba(255,43,214,0.85);
+cursor:pointer;
+touch-action:manipulation;
+}
+
+.btn:active{
+transform:scale(0.97);
+filter:brightness(1.1);
+}
+
+/* ===== NUMBER BOX ===== */
 .number-box{
 display:none;
-margin:12px 0;
+margin:14px 0;
 background:#111;
-border-radius:12px;
-padding:10px;
+border-radius:14px;
+padding:12px;
 text-align:left;
-box-shadow:0 0 10px #ff2bd6;
-z-index:3;
+box-shadow:0 0 12px #ff2bd6;
 }
 
 .number-box span{
@@ -74,29 +115,44 @@ color:#ff8fe8;
 
 .number-box input{
 width:100%;
-margin-top:5px;
-padding:10px;
+margin-top:6px;
+padding:12px;
 border:none;
-border-radius:8px;
+border-radius:10px;
 background:#000;
 color:#00ffcc;
 font-weight:bold;
-font-size:15px;
+font-size:16px;
 outline:none;
 }
 
-/* ==== QRIS ==== */
+/* ===== QRIS ===== */
 .qris-box img{
 display:none;
-width:220px;
-margin:15px auto;
-border-radius:14px;
-box-shadow:0 0 15px #ff2bd6;
+width:230px;
+margin:18px auto;
+border-radius:16px;
+box-shadow:0 0 18px #ff2bd6;
 }
 
 .download-btn{
 display:none;
-margin-top:10px;
+margin-top:12px;
 background:linear-gradient(135deg,#00ffcc,#00bfff);
-box-shadow:0 0 15px #00ffcc;
+box-shadow:0 0 18px #00ffcc;
+}
+
+/* ===== ALERT & MUSIC ===== */
+.alert{
+display:none;
+margin-top:8px;
+font-size:13px;
+color:#8cff8c;
+}
+
+.music-btn{
+margin-top:14px;
+font-size:13px;
+color:#ff8fe8;
+cursor:pointer;
   }
