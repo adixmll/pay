@@ -11,14 +11,26 @@
 <div class="box" onclick="startMusic()">
 <h2>LIST PAYMENT</h2>
 
-<button class="btn" onclick="copyPin(event,'081234567890')">GOPAY</button>
-<button class="btn" onclick="copyPin(event,'089876543210')">OVO</button>
-<button class="btn" onclick="copyPin(event,'085112223333')">DANA</button>
+<button class="btn" onclick="copyPin(event,'GOPAY','081234567890')">GOPAY</button>
+<button class="btn" onclick="copyPin(event,'OVO','089876543210')">OVO</button>
+<button class="btn" onclick="copyPin(event,'DANA','085112223333')">DANA</button>
+
+<!-- KOLOM NOMOR -->
+<div class="number-box" id="numberBox">
+<span id="numberLabel"></span>
+<input type="text" id="numberValue" readonly>
+</div>
 
 <button class="btn" onclick="showQris(event)">QRIS</button>
 
-<div class="alert" id="alert">nomor berhasil di copy ✨</div>
+<div class="qris-box">
 <img id="qrisImg" src="qris.png">
+<a id="downloadQris" href="qris.png" download class="btn download-btn">
+⬇ DOWNLOAD QRIS
+</a>
+</div>
+
+<div class="alert" id="alert">nomor berhasil di copy ✨</div>
 
 <div class="music-btn" onclick="toggleMusic(event)">🔊 music on / off</div>
 </div>
