@@ -3,36 +3,46 @@ margin:0;padding:0;box-sizing:border-box;
 -webkit-tap-highlight-color:transparent;
 user-select:none;touch-action:manipulation
 }
+/* ===== BACKGROUND NEON PINK ===== */
 body{
-background:#05000a;
+background:
+radial-gradient(circle at 20% 20%, rgba(255,45,214,0.35), transparent 40%),
+radial-gradient(circle at 80% 30%, rgba(255,120,220,0.35), transparent 45%),
+radial-gradient(circle at 50% 80%, rgba(255,80,200,0.35), transparent 50%),
+linear-gradient(120deg, #05000a, #120015, #05000a);
+background-size: 200% 200%;
+animation: bgMove 18s ease-in-out infinite;
 color:white;
 font-family:Arial;
 height:100vh;
 display:flex;
 justify-content:center;
-align-items:center
+align-items:center;
+overflow:hidden;
 }
-.box{
-width:90%;
-max-width:400px;
-background:#0a0a14;
-padding:25px;
-border-radius:20px;
-text-align:center
+
+@keyframes bgMove{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
 }
-.btn{
-width:100%;
-padding:15px;
-margin:8px 0;
-border:none;
-border-radius:14px;
-background:linear-gradient(135deg,#ff2bd6,#8f00ff);
-color:white;
-font-weight:bold
+
+/* ===== EMOJI TERBANG PINK ===== */
+.bg-decor{
+position:absolute;
+left:var(--x);
+font-size:var(--size);
+opacity:0.75;
+animation: floatUp var(--speed) linear infinite;
+animation-delay: var(--delay);
+filter: drop-shadow(0 0 8px rgba(255,80,200,0.85));
+pointer-events:none;
 }
-.alert{display:none;color:#8cff8c;margin-top:10px}
-#qrisImg{display:none;width:200px;margin-top:15px}
-.music-btn{margin-top:15px;color:#ff8fe8}
+
+@keyframes floatUp{
+from{transform:translateY(120vh) rotate(0deg)}
+to{transform:translateY(-30vh) rotate(360deg)}
+}
 /* ==== TAMBAHAN REVISI ==== */
 .number-box{
 display:none;
