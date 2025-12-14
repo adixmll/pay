@@ -7,16 +7,15 @@ user-select:none;
 touch-action:manipulation;
 }
 
-/* ===== BACKGROUND NEON PINK ===== */
+/* ===== BACKGROUND (LIGHT VERSION) ===== */
 body{
 position:relative;
 background:
-radial-gradient(circle at 20% 20%, rgba(255,45,214,0.35), transparent 40%),
-radial-gradient(circle at 80% 30%, rgba(255,120,220,0.35), transparent 45%),
-radial-gradient(circle at 50% 80%, rgba(255,80,200,0.35), transparent 50%),
-linear-gradient(120deg, #05000a, #120015, #05000a);
-background-size:200% 200%;
-animation:bgMove 18s ease-in-out infinite;
+radial-gradient(circle at 30% 30%, rgba(255,45,214,0.18), transparent 45%),
+radial-gradient(circle at 70% 40%, rgba(255,120,220,0.18), transparent 45%),
+linear-gradient(120deg, #05000a, #120015);
+background-size:150% 150%;
+animation:bgMove 28s linear infinite; /* LEBIH PELAN */
 color:white;
 font-family:Arial, sans-serif;
 min-height:100vh;
@@ -26,133 +25,111 @@ align-items:center;
 overflow:hidden;
 }
 
-/* BACKGROUND MOVE */
+/* background gerak ringan */
 @keyframes bgMove{
 0%{background-position:0% 50%}
-50%{background-position:100% 50%}
-100%{background-position:0% 50%}
+100%{background-position:100% 50%}
 }
 
-/* ===== EMOJI TERBANG PINK ===== */
+/* ===== EMOJI TERBANG (RINGAN) ===== */
 .bg-decor{
 position:absolute;
 left:var(--x);
 font-size:var(--size);
-opacity:0.85;
+opacity:0.65;
 animation:floatUp var(--speed) linear infinite;
 animation-delay:var(--delay);
-filter:drop-shadow(0 0 10px rgba(255,80,200,0.9));
+transform:translateZ(0); /* GPU */
 pointer-events:none;
 z-index:1;
 }
 
 @keyframes floatUp{
-from{
-transform:translateY(120vh) rotate(0deg);
-}
-to{
-transform:translateY(-30vh) rotate(360deg);
-}
+from{transform:translateY(120vh)}
+to{transform:translateY(-30vh)}
 }
 
-/* ===== BOX UTAMA ===== */
+/* ===== BOX ===== */
 .box{
 position:relative;
 z-index:5;
 width:92%;
 max-width:420px;
-background:rgba(10,10,20,0.92);
-padding:26px;
-border-radius:22px;
+background:rgba(10,10,20,0.88);
+padding:22px;
+border-radius:20px;
 text-align:center;
-box-shadow:0 0 30px #ff2bd6;
+box-shadow:0 0 14px rgba(255,43,214,0.55); /* LEBIH RINGAN */
 }
 
-.box h2{
-color:#ff5fd2;
-margin-bottom:18px;
-text-shadow:0 0 10px #ff2bd6;
-}
-
-/* ===== BUTTON (FIX SUSAH DIPENCET) ===== */
+/* ===== BUTTON (EMPuk & RINGAN) ===== */
 .btn{
 width:100%;
-min-height:60px;          /* AREA SENTUH BESAR */
-padding:18px 20px;
-margin:14px 0;
+min-height:58px;
+padding:16px;
+margin:12px 0;
 border:none;
-border-radius:18px;
-font-size:18px;
+border-radius:16px;
+font-size:17px;
 font-weight:bold;
-letter-spacing:0.5px;
 color:white;
 background:linear-gradient(135deg,#ff2bd6,#8f00ff);
-box-shadow:0 0 18px rgba(255,43,214,0.85);
-cursor:pointer;
-touch-action:manipulation;
+box-shadow:0 0 10px rgba(255,43,214,0.55);
+transition:transform .15s ease, filter .15s ease;
 }
 
 .btn:active{
-transform:scale(0.97);
-filter:brightness(1.1);
+transform:scale(0.98);
+filter:brightness(1.05);
 }
 
 /* ===== NUMBER BOX ===== */
 .number-box{
 display:none;
-margin:14px 0;
+margin:12px 0;
 background:#111;
-border-radius:14px;
-padding:12px;
-text-align:left;
-box-shadow:0 0 12px #ff2bd6;
-}
-
-.number-box span{
-font-size:12px;
-color:#ff8fe8;
+border-radius:12px;
+padding:10px;
+box-shadow:0 0 8px rgba(255,43,214,0.6);
 }
 
 .number-box input{
 width:100%;
-margin-top:6px;
-padding:12px;
+padding:10px;
 border:none;
-border-radius:10px;
+border-radius:8px;
 background:#000;
 color:#00ffcc;
 font-weight:bold;
-font-size:16px;
-outline:none;
+font-size:15px;
 }
 
 /* ===== QRIS ===== */
 .qris-box img{
 display:none;
-width:230px;
-margin:18px auto;
-border-radius:16px;
-box-shadow:0 0 18px #ff2bd6;
+width:210px;
+margin:14px auto;
+border-radius:14px;
+box-shadow:0 0 10px rgba(255,43,214,0.6);
 }
 
 .download-btn{
 display:none;
-margin-top:12px;
+margin-top:10px;
 background:linear-gradient(135deg,#00ffcc,#00bfff);
-box-shadow:0 0 18px #00ffcc;
+box-shadow:0 0 10px rgba(0,255,204,0.6);
 }
 
-/* ===== ALERT & MUSIC ===== */
+/* ===== TEXT ===== */
 .alert{
 display:none;
-margin-top:8px;
-font-size:13px;
+font-size:12px;
 color:#8cff8c;
 }
 
 .music-btn{
-margin-top:14px;
-font-size:13px;
+margin-top:12px;
+font-size:12px;
 color:#ff8fe8;
 cursor:pointer;
   }
