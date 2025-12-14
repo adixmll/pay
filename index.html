@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Neon Payment</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="box" onclick="startMusic()">
+<h2>LIST PAYMENT</h2>
+
+<button class="btn" onclick="copyPin(event,'081234567890')">GOPAY</button>
+<button class="btn" onclick="copyPin(event,'089876543210')">OVO</button>
+<button class="btn" onclick="copyPin(event,'085112223333')">DANA</button>
+
+<button class="btn" onclick="showQris(event)">QRIS</button>
+
+<div class="alert" id="alert">nomor berhasil di copy ✨</div>
+<img id="qrisImg" src="qris.png">
+
+<div class="music-btn" onclick="toggleMusic(event)">🔊 music on / off</div>
+</div>
+
+<audio id="bgm" loop src="music.mp3"></audio>
+<script src="script.js"></script>
+</body>
+</html>
